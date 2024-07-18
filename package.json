@@ -1,9 +1,10 @@
 {
   "name": "basic-temrinal-chat-openai",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "nodemon -r ts-node/register src/index.ts",
+    "start": "nodemon -r ts-node/register src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
     "dotenv": "^16.4.5",
     "nodemon": "^3.1.4",
     "openai": "^4.52.7",
+    "tiktoken": "^1.0.15",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {

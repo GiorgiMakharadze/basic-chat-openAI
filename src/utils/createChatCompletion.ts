@@ -1,24 +1,18 @@
-import OpenAI from "openai";
-import { Openai } from "..";
+import { MAX_TOKENS } from "../globals";
+import { Openai, context } from "../server";
+import { DeleteOlderMessages } from "./deleteOlderMessages";
 
-export const context: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
-  {
-    role: "system",
-    content: "You are a helpful chatbot",
-  },
-];
-
-export const CreateChatCompletion = async () => {
+export const CreateChatCompletion = async (): Promise<void> => {
   try {
     const response = await Openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: context,
     });
     const responseMessage = response.choices[0].message;
-    context.push({
-      role: "assistant",
-      content: responseMessage.content,
-    });
+    context.push(responseMessage);
+    if (response.usage && response.usage.total_tokens > MAX_TOKENS) {
+      DeleteOlderMessages();
+    }
     console.log(
       `${response.choices[0].message.role}: ${response.choices[0].message.content}`
     );
