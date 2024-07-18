@@ -4,7 +4,7 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "nodemon -r ts-node/register src/server.ts",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,14 +12,17 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@types/node": "^20.14.11",
     "dotenv": "^16.4.5",
     "nodemon": "^3.1.4",
     "openai": "^4.52.7",
     "tiktoken": "^1.0.15",
-    "ts-node": "^10.9.2"
+    "tsconfig-paths": "^4.2.0",
+    "tscpaths": "^0.0.9"
   },
   "devDependencies": {
+    "@types/node": "^20.14.11",
+    "@types/nodemon": "^1.19.6",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   }
 }

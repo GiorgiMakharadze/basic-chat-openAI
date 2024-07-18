@@ -1,10 +1,10 @@
 import { MAX_TOKENS } from "../globals";
-import { Openai, context } from "../server";
+import { openAIClient, context } from "../server";
 import { DeleteOlderMessages } from "./deleteOlderMessages";
 
 export const CreateChatCompletion = async (): Promise<void> => {
   try {
-    const response = await Openai.chat.completions.create({
+    const response = await openAIClient.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: context,
     });

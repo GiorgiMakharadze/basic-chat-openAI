@@ -3,7 +3,7 @@ import { CreateChatCompletion } from "./utils/createChatCompletion";
 import { encoding_for_model } from "tiktoken";
 import { API_KEY } from "./globals";
 
-export const Openai = new OpenAI({
+export const openAIClient = new OpenAI({
   apiKey: API_KEY,
 });
 
