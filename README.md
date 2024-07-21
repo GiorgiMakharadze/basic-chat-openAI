@@ -14,5 +14,5 @@ This is a simple Node application that uses OpenAI to run ChatGPT in a local ter
 
 ```bash
 OPENAI_API_KEY=your-OpenAI-API-key
-then run npm start.
 ```
+Then run npm start.
